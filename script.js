@@ -8,9 +8,11 @@ var characters = ["!","@", "#", "$", "%", "^", "&", "*", "?"];
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword("write your password");
-  var passwordText = document.querySelector("abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&*?" + [0123456789] );
-  
-
+  var passwordText = document.querySelector(lowerCase + upperCase + numbers + characters );
+  localStorage.setItem(passwordText)
+  for(i = 0; i < 9; i++) {
+    Math.floor(Math.random() * 9)
+  }
 }
 
 for(i = 0; i < 9; i++) {
@@ -21,4 +23,3 @@ for(i = 0; i < 9; i++) {
 generateBtn.addEventListener("click", writePassword);
 
 
-function writePassword(password)
